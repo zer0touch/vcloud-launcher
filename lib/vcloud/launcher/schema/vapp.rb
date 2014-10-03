@@ -13,7 +13,8 @@ module Vcloud
           catalog_name:       { type: 'string', required: true, allowed_empty: false },
           catalog_item:       { type: 'string', deprecated_by: 'vapp_template_name', allowed_empty: false },
           vapp_template_name: { type: 'string', required: true, allowed_empty: false },
-          vm:                 Vcloud::Launcher::Schema::VM,
+          vms:                { type: 'array', required: false, each_element_is: Vcloud::Launcher::Schema::VM },
+          vapp_networks:      { type: 'array', required: false, each_element_is: Vcloud::Launcher::Schema::VAPP_NETWORK },
         },
       }
 
