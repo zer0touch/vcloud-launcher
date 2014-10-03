@@ -7,6 +7,10 @@ module Vcloud
         required: false,
         allowed_empty: false,
         internals: {
+          name: {
+            type: 'string',
+            required: false,
+          },
           network_connections: {
             type: 'array',
             required: false,
