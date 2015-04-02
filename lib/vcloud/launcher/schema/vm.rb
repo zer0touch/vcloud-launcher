@@ -7,6 +7,18 @@ module Vcloud
         required: false,
         allowed_empty: false,
         internals: {
+          name: {
+            type: 'string',
+            required: false,
+          },
+          catalog_name: {
+            type: 'string',
+            required: false,
+          },
+          vapp_template_name: {
+            type: 'string',
+            required: false,
+          },
           network_connections: {
             type: 'array',
             required: false,
@@ -40,7 +52,7 @@ module Vcloud
               },
             },
           },
-          bootstrap:   {
+          bootstrap: {
             type: 'hash',
             required: false,
             allowed_empty: false,
@@ -48,6 +60,7 @@ module Vcloud
               script_path: { type: 'string', required: false },
               script_post_processor: { type: 'string', required: false },
               vars: { type: 'hash', required: false, allowed_empty: true },
+              disabled: { type: 'boolean', required: false, allowed_empty: false },
             },
           },
           metadata: {
